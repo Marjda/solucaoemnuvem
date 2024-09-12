@@ -1,0 +1,81 @@
+<!--
+  <!DOCTYPE html>: Isso diz ao navegador que estamos criando uma página HTML.
+  <html lang="en">: Começa o código HTML e diz que a linguagem principal da página é inglês (usamos "en" para "English").
+  <meta charset="UTF-8" />: Isso garante que a página entenda vários tipos de letras e símbolos (como acentos ou emojis).
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />: Isso ajuda a página a se ajustar bem em diferentes tamanhos de tela, como celulares e computadores.
+  <title>Gestão de Arquivos da UBS</title>: O título da página, que aparece na aba do navegador.
+  <link rel="stylesheet" href="../static/css/styles.css" />: Isso diz ao navegador para buscar o arquivo de estilo CSS (chamado styles.css) que vai definir como a página vai ficar visualmente.
+  <body>: Aqui começa o corpo da página, onde colocamos o que realmente vai aparecer.
+  <div class="container">: Esse é o "recipiente" principal, que organiza o conteúdo dentro dele.
+  <h1>: Um título grande, que aqui está mostrando o nome "Gestão de Arquivos da UBS".
+  <div class="upload-section">: Aqui criamos uma seção específica só para o upload de arquivos.
+  <h2>Upload de Arquivo</h2>: Um título menor que o anterior, explicando que aqui as pessoas vão subir seus arquivos.
+  <form id="uploadForm">: Um formulário onde as pessoas podem escolher o arquivo e enviar.
+  <input type="file" id="fileInput" name="file" required />: Isso é onde a pessoa escolhe o arquivo no computador.
+  type="file": Significa que estamos esperando um arquivo.
+  required: Isso faz com que seja obrigatório escolher um arquivo antes de enviar.
+  <button type="submit">Enviar Arquivo</button>: Um botão que a pessoa clica para enviar o arquivo.
+  <p id="uploadMessage"></p>: Um parágrafo vazio onde pode aparecer uma mensagem depois que o arquivo for enviado (por exemplo, "Upload feito com sucesso!").
+  <div class="filter-section">: Essa parte serve para buscar ou filtrar os arquivos.
+  <input type="text" id="searchInput" placeholder="Buscar por nome de arquivo" />: Um campo de busca onde a pessoa pode digitar o nome do arquivo que está procurando.
+  placeholder="Buscar por nome de arquivo": Esse texto aparece dentro do campo para sugerir o que a pessoa pode digitar.
+  <select id="fileTypeSelect">: Um menu de seleção onde a pessoa pode escolher o tipo de arquivo que quer ver (PDF, imagem, etc.).
+  <option value="">Todos os tipos</option>: Essa opção mostra todos os arquivos, independente do tipo.
+  <option value="pdf">PDF</option>, etc.: Cada opção representa um tipo específico de arquivo, como PDFs, imagens, ou planilhas.
+  <div class="files-section">: Seção onde vamos mostrar os arquivos que já foram enviados.
+  <h2>Arquivos Disponíveis</h2>: Um título para essa seção.
+  <div id="fileList"></div>: Uma área onde a lista de arquivos vai aparecer. No momento, está vazia, mas será preenchida dinamicamente com os arquivos.
+  <script src="../static/js/scripts.js"></script>: Esse código traz um arquivo JavaScript que vai fazer a página funcionar. O JavaScript é responsável por fazer coisas como o upload do arquivo e a filtragem.
+  </body>: Aqui terminamos o conteúdo do corpo da página.
+  </html>: E aqui fechamos o código HTML.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestão de Arquivos da UBS</title>
+    <link rel="stylesheet" href="../static/css/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Gestão de Arquivos da UBS</h1>
+
+      <!-- Formulário de Upload -->
+      <div class="upload-section">
+        <h2>Upload de Arquivo</h2>
+        <form id="uploadForm">
+          <input type="file" id="fileInput" name="file" required />
+          <button type="submit">Enviar Arquivo</button>
+        </form>
+        <p id="uploadMessage"></p>
+      </div>
+
+      <!-- Barra de Pesquisa e Dropdown para Filtro -->
+      <div class="filter-section">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Buscar por nome de arquivo"
+        />
+        <select id="fileTypeSelect">
+          <option value="">Todos os tipos</option>
+          <option value="pdf">PDF</option>
+          <option value="image">Imagens</option>
+          <option value="word">Documentos do Word</option>
+          <option value="csv">CSV</option>
+          <option value="excel">Excel</option>
+        </select>
+      </div>
+
+      <!-- Lista de Arquivos -->
+      <div class="files-section">
+        <h2>Arquivos Disponíveis</h2>
+        <div id="fileList"></div>
+      </div>
+    </div>
+
+    <script src="../static/js/scripts.js"></script>
+  </body>
+</html>

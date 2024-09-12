@@ -1,0 +1,169 @@
+/* Estilo global */
+body {
+  font-family: "Roboto", sans-serif; /* Aqui escolhemos a letra que será usada em todo o site, como se fosse a "caligrafia" da página. */
+  background-color: #f0f2f5; /* Pintamos o fundo da página com uma cor clara (#f0f2f5 é um cinza clarinho). */
+  margin: 0; /* Não queremos espaços ao redor da página, então o margin é 0. */
+  padding: 0; /* Também não queremos espaço dentro da página. */
+  display: flex; /* Isso organiza os itens da página de um jeito flexível, como se fosse uma caixa mágica. */
+  justify-content: center; /* Coloca os itens no centro da página, na horizontal (da esquerda para a direita). */
+  align-items: center; /* Coloca os itens no centro também na vertical (de cima para baixo). */
+  min-height: 100vh; /* Faz com que a página ocupe, no mínimo, toda a altura da tela (100vh significa 100% da altura da tela). */
+}
+
+.container {
+  background-color: white; /* A cor de fundo do container será branca. */
+  border-radius: 8px; /* Aqui, deixamos as bordas da caixa arredondadas com 8 pixels de curva. */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Criamos uma sombra leve ao redor da caixa, como se ela estivesse flutuando. */
+  padding: 40px; /* Colocamos espaço dentro da caixa para os elementos não ficarem colados nas bordas. */
+  max-width: 700px; /* A caixa não vai ficar maior que 700 pixels de largura. */
+  width: 100%; /* Ela vai ocupar 100% da largura disponível (mas respeitando o máximo de 700px). */
+}
+
+/* Títulos */
+h1 {
+  text-align: center; /* Faz o título principal ficar no centro da página. */
+  color: #333; /* A cor do texto é um cinza escuro. */
+  font-size: 28px; /* O tamanho da letra é grande: 28 pixels. */
+  margin-bottom: 20px; /* Colocamos um espaço de 20 pixels embaixo do título para separar do resto. */
+}
+
+h2 {
+  color: #555; /* A cor aqui é um pouco mais clara que o título principal (#555 é um cinza médio). */
+  font-size: 22px; /* A letra é um pouco menor: 22 pixels. */
+  margin-bottom: 15px; /* Tem um espaço de 15 pixels abaixo para separar do próximo conteúdo. */
+}
+
+/* Seção de upload */
+.upload-section {
+  margin-bottom: 30px; /* Deixa um espaço de 30 pixels abaixo dessa seção para não ficar tudo apertado. */
+}
+
+input[type="file"] {
+  width: 97%; /* A caixa de upload ocupa quase toda a largura disponível (97%). */
+  padding: 10px; /* Espaço dentro da caixa para o texto não encostar nas bordas. */
+  border: 1px solid #ddd; /* Uma borda fina, cinza clara (#ddd), em volta da caixa de upload. */
+  border-radius: 4px; /* As bordas são um pouco arredondadas (4 pixels). */
+  margin-bottom: 10px; /* Um espaço de 10 pixels abaixo para dar um respiro entre os elementos. */
+}
+
+button {
+  background-color: #28a745; /* A cor do botão é verde (#28a745). */
+  color: white; /* O texto dentro do botão é branco. */
+  padding: 10px 20px; /* Espaçamento dentro do botão: 10 pixels em cima/baixo, 20 pixels nas laterais. */
+  border: none; /* Sem borda no botão. */
+  border-radius: 5px; /* As bordas são arredondadas com 5 pixels. */
+  font-size: 16px; /* Tamanho da letra do botão é 16 pixels. */
+  cursor: pointer; /* Quando o mouse passa por cima, ele vira uma mãozinha (para mostrar que é clicável). */
+  transition: background-color 0.3s; /* Quando a cor mudar, a transição vai ser suave e durar 0,3 segundos. */
+  width: 100%; /* O botão vai ocupar 100% da largura disponível. */
+}
+
+button:hover {
+  /* Quando passar o mouse em cima do botão a cor vai ser alterada (:hover) */
+  background-color: #218838;
+}
+
+/* Mensagem de upload */
+#uploadMessage {
+  font-size: 14px; /* O texto aqui é menor, com 14 pixels. */
+  margin-top: 10px; /* Espaço de 10 pixels acima da mensagem. */
+  color: #888; /* A cor do texto é um cinza bem claro (#888). */
+  text-align: center; /* O texto vai ficar no centro da página. */
+}
+
+/* Container da lista de arquivos em formato grid */
+#fileList {
+  display: grid; /* Usamos uma "grade" para organizar os arquivos, como uma tabela. */
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(150px, 1fr)
+  ); /* Cria colunas flexíveis que ocupam, no mínimo, 150 pixels cada. */
+  gap: 20px; /* Espaço entre os itens da grade de 20 pixels. */
+  margin-top: 20px; /* Espaço de 20 pixels no topo dessa seção. */
+}
+
+/* Estilo para cada cartão de arquivo */
+.file-item {
+  background-color: #f8f9fa; /* O fundo dos cartões é cinza claro. */
+  padding: 20px; /* Espaço dentro do cartão para deixar o conteúdo mais confortável. */
+  border-radius: 8px; /* Borda arredondada com 8 pixels. */
+  display: flex; /* Organiza os itens dentro do cartão como uma "caixa mágica" flexível. */
+  flex-direction: column; /* Organiza os itens verticalmente, um embaixo do outro. */
+  align-items: center; /* Tudo fica no centro do cartão. */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Uma sombra leve ao redor do cartão, como se ele estivesse flutuando. */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Quando o cartão for clicado, ele vai "mexer" suavemente. */
+  text-align: center; /* O texto dentro do cartão vai ficar centralizado. */
+}
+
+.file-item:hover {
+  transform: translateY(
+    -5px
+  ); /* Quando o mouse passar por cima, o cartão vai subir 5 pixels, como se estivesse "pulando". */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* A sombra fica mais forte quando o cartão "pula". */
+}
+
+/* Ícone do arquivo */
+.file-item .file-icon {
+  font-size: 48px;
+  margin-bottom: 10px;
+  color: #007bff;
+}
+
+/* Nome do arquivo */
+.file-item .file-name {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 10px;
+  word-wrap: break-word; /* Permite a quebra de linha */
+  max-width: 100%; /* Garante que o nome não ultrapasse o card */
+  white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+  overflow: hidden; /* Oculta o texto que excede o tamanho do card */
+  text-overflow: ellipsis; /* Adiciona "..." ao final se o nome for muito longo */
+}
+
+/* Botão de download */
+.file-item a {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.file-item a:hover {
+  background-color: #218838;
+}
+
+/* Estilo para a seção de filtros */
+.filter-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+/* Barra de pesquisa */
+#searchInput {
+  padding: 10px;
+  font-size: 14px;
+  width: 60%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* Dropdown de tipo de arquivo */
+#fileTypeSelect {
+  padding: 10px;
+  font-size: 14px;
+  width: 35%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 600px) {
+  #fileList {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+}
